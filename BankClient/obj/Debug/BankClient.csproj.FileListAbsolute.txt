@@ -1,0 +1,15 @@
+C:\Users\Patryk\source\repos\Bank\BankClient\bin\Debug\BankClient.exe.config
+C:\Users\Patryk\source\repos\Bank\BankClient\bin\Debug\BankClient.exe
+C:\Users\Patryk\source\repos\Bank\BankClient\bin\Debug\BankClient.pdb
+C:\Users\Patryk\source\repos\Bank\BankClient\obj\Debug\BankClient.csprojAssemblyReference.cache
+C:\Users\Patryk\source\repos\Bank\BankClient\obj\Debug\MainWindow.g.cs
+C:\Users\Patryk\source\repos\Bank\BankClient\obj\Debug\App.g.cs
+C:\Users\Patryk\source\repos\Bank\BankClient\obj\Debug\BankClient_MarkupCompile.cache
+C:\Users\Patryk\source\repos\Bank\BankClient\obj\Debug\BankClient_MarkupCompile.lref
+C:\Users\Patryk\source\repos\Bank\BankClient\obj\Debug\MainWindow.baml
+C:\Users\Patryk\source\repos\Bank\BankClient\obj\Debug\BankClient.g.resources
+C:\Users\Patryk\source\repos\Bank\BankClient\obj\Debug\BankClient.Properties.Resources.resources
+C:\Users\Patryk\source\repos\Bank\BankClient\obj\Debug\BankClient.csproj.GenerateResource.cache
+C:\Users\Patryk\source\repos\Bank\BankClient\obj\Debug\BankClient.csproj.CoreCompileInputs.cache
+C:\Users\Patryk\source\repos\Bank\BankClient\obj\Debug\BankClient.exe
+C:\Users\Patryk\source\repos\Bank\BankClient\obj\Debug\BankClient.pdb
