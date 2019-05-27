@@ -1,0 +1,17 @@
+C:\Users\Patryk\source\repos\Bank\BankServer\bin\Debug\BankServer.exe.config
+C:\Users\Patryk\source\repos\Bank\BankServer\bin\Debug\BankServer.exe
+C:\Users\Patryk\source\repos\Bank\BankServer\bin\Debug\BankServer.pdb
+C:\Users\Patryk\source\repos\Bank\BankServer\bin\Debug\Bank.dll
+C:\Users\Patryk\source\repos\Bank\BankServer\bin\Debug\EntityFramework.dll
+C:\Users\Patryk\source\repos\Bank\BankServer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Patryk\source\repos\Bank\BankServer\bin\Debug\Bank.pdb
+C:\Users\Patryk\source\repos\Bank\BankServer\bin\Debug\Bank.dll.config
+C:\Users\Patryk\source\repos\Bank\BankServer\bin\Debug\EntityFramework.xml
+C:\Users\Patryk\source\repos\Bank\BankServer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Patryk\source\repos\Bank\BankServer\obj\Debug\BankServer.csprojAssemblyReference.cache
+C:\Users\Patryk\source\repos\Bank\BankServer\obj\Debug\BankServer.csproj.CoreCompileInputs.cache
+C:\Users\Patryk\source\repos\Bank\BankServer\obj\Debug\BankServer.csproj.CopyComplete
+C:\Users\Patryk\source\repos\Bank\BankServer\obj\Debug\BankServer.exe
+C:\Users\Patryk\source\repos\Bank\BankServer\obj\Debug\BankServer.pdb
+C:\Users\Patryk\source\repos\Bank\BankServer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Patryk\source\repos\Bank\BankServer\bin\Debug\Newtonsoft.Json.xml

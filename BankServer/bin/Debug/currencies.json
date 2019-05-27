@@ -1,0 +1,8 @@
+{
+  "currencies":[
+    {
+      "name": "dolar",
+      "converter": "4.00"
+    }
+  ]
+}

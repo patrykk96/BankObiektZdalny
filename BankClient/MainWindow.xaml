@@ -22,11 +22,13 @@
             <Label Content="Numer konta: " HorizontalAlignment="Left" Margin="208,196,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="textboxAmount" HorizontalAlignment="Left" Height="23" Margin="313,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
             <TextBox x:Name="textboxTargetNumber" HorizontalAlignment="Left" Height="23" Margin="313,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Button x:Name="buttonRefresh" Content="Odśwież" HorizontalAlignment="Left" Margin="164,258,0,0" VerticalAlignment="Top" Width="75"/>
-            <Button x:Name="buttonDeposit" Content="Wpłać pieniądze" HorizontalAlignment="Left" Margin="263,258,0,0" VerticalAlignment="Top" Width="75"/>
-            <Button x:Name="buttonWithdraw" Content="Wypłać pieniądze" HorizontalAlignment="Left" Margin="358,258,0,0" VerticalAlignment="Top" Width="75"/>
-            <Button x:Name="buttonTransfer" Content="Wykonaj przelew" HorizontalAlignment="Left" Margin="468,258,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="buttonRefresh" Content="Odśwież" HorizontalAlignment="Left" Margin="164,258,0,0" VerticalAlignment="Top" Width="75" Click="ButtonRefresh_Click"/>
+            <Button x:Name="buttonDeposit" Content="Wpłać pieniądze" HorizontalAlignment="Left" Margin="263,258,0,0" VerticalAlignment="Top" Width="75" Click="ButtonDeposit_Click"/>
+            <Button x:Name="buttonWithdraw" Content="Wypłać pieniądze" HorizontalAlignment="Left" Margin="358,258,0,0" VerticalAlignment="Top" Width="75" Click="ButtonWithdraw_Click"/>
+            <Button x:Name="buttonTransfer" Content="Wykonaj przelew" HorizontalAlignment="Left" Margin="468,258,0,0" VerticalAlignment="Top" Width="75" Click="ButtonTransfer_Click"/>
             <Button x:Name="buttonLogout" Content="Wyloguj" HorizontalAlignment="Left" Margin="644,169,0,0" VerticalAlignment="Top" Width="75" Click="ButtonLogout_Click"/>
+            <Label x:Name="labelClientError" Content="Label" HorizontalAlignment="Left" Margin="490,205,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="labelCurrency" Content="Label" HorizontalAlignment="Left" Margin="143,75,0,0" VerticalAlignment="Top"/>
         </Grid>
 
     </Grid>

@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Bank
 {
-    public class Client
+    public class Client : Entity
     {
         public string AccountNumber { get; set; }
-        public string PinNumber { get; set; }
+        public byte[] PinNumberSalt { get; set; }
+        public byte[] PinNumberHash { get; set; }
         public string Token { get; set; }
         public double AccountBalance { get; set; }
+        public int Currency { get; set; }
     }
 }
