@@ -85,8 +85,13 @@
     <Compile Include="Migrations\201905271958077_Currency.Designer.cs">
       <DependentUpon>201905271958077_Currency.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905291314422_Provisions.cs" />
+    <Compile Include="Migrations\201905291314422_Provisions.Designer.cs">
+      <DependentUpon>201905291314422_Provisions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provision.cs" />
     <Compile Include="Repository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905271958077_Currency.resx">
       <DependentUpon>201905271958077_Currency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905291314422_Provisions.resx">
+      <DependentUpon>201905291314422_Provisions.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

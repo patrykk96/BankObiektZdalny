@@ -45,7 +45,7 @@ namespace BankClient
         {
             
             string account = textboxAccountNumber.Text;
-            string pin = textboxPin.Text;
+            string pin = textboxPin.Password;
             token = bank.Authorize(account, pin);
             if (token.Length == 0)
             {
@@ -138,10 +138,12 @@ namespace BankClient
                 labelClientError.Content = "";
                 double value = double.Parse(amount, CultureInfo.CurrentCulture);
                 string account = textboxTargetNumber.Text;
-                bool success = bank.Withdraw(token, account, value);
+                string success = bank.Withdraw(token, account, value);
 
-                if (success)
+                if (success.Length != 0)
                 {
+                    labelClientError.Content = "";
+                    MessageBox.Show(success, "Informacja");
                     RefreshBalance();
                 }
                 else
@@ -159,7 +161,7 @@ namespace BankClient
             labelCurrency.Content = "";
             textboxAccountNumber.Text = "";
             textboxAmount.Text = "";
-            textboxPin.Text = "";
+            textboxPin.Password = "";
             textboxTargetNumber.Text = "";
         }
     }

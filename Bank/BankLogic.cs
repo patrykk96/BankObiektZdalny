@@ -25,7 +25,6 @@ namespace Bank
 
             string token = Guid.NewGuid().ToString();
             client.Token = token;
-           // var test = JsonConvert.DeserializeObject<ListCurrency>(File.ReadAllText(@"currencies.json"));
             _repo.UpdateClient();
 
             return token;
@@ -84,8 +83,10 @@ namespace Bank
             return false;
         }
 
-        public bool Withdraw(string token, string account, double value)
+        public string Withdraw(string token, string account, double value)
         {
+            var result = "";
+
             var client = _repo.GetClient(x => x.Token == token);
 
             if (client != null || client.AccountNumber != account)
@@ -95,15 +96,68 @@ namespace Bank
                     var target = _repo.GetClient(x => x.AccountNumber == account);
                     if (target != null)
                     {
-                        client.AccountBalance -= value;
-                        target.AccountBalance += value;
+                        var clientsCurrency = client.Currency;
+                        var targetsCurrency = target.Currency;
+
+                        if (clientsCurrency == targetsCurrency)
+                        {
+                            client.AccountBalance -= value;
+                            target.AccountBalance += value;
+
+                            string c = CheckCurrency(clientsCurrency);
+                            result = "Przesłano kwotę: " + value + " " + c;
+                        }
+                        else
+                        {
+                            var currencies = JsonConvert.DeserializeObject<ListCurrency>(File.ReadAllText(@"currencies.json"));
+
+                            var currency = currencies.Currencies.FirstOrDefault(x => x.Name == clientsCurrency && x.Target == targetsCurrency);
+
+                            var provision = _repo.GetProvision(x => x.Source == clientsCurrency && x.Target == targetsCurrency);
+
+                            var help = 1 - provision.Amount;
+                            double amount = Math.Floor((value * help) * 100) / 100;
+                            double provAmount = Math.Floor((value - amount) * 100) / 100;
+
+                            if (currency != null)
+                            {
+                                client.AccountBalance -= value;
+                                //double amount = Math.Round(value * help, 2, MidpointRounding.AwayFromZero);
+                                //double transfer = Math.Round(amount * currency.Converter, 2, MidpointRounding.AwayFromZero);
+                                double transfer = Math.Floor((amount * currency.Converter) * 100) / 100;
+                                target.AccountBalance += transfer;
+                                string c = CheckCurrency(clientsCurrency);
+                                string c2 = CheckCurrency(targetsCurrency);
+                                result = "Przesłano kwotę: " + value + " " + c + ". Prowizja wyniosła " + provAmount + " " + c + ". Odbiorca otrzymał: " + transfer + " " + c2 + ".";
+                            }
+                            else
+                            {
+                                currency = currencies.Currencies.FirstOrDefault(x => x.Name == targetsCurrency && x.Target == clientsCurrency);
+
+                                if (currency != null)
+                                {
+                                    client.AccountBalance -= value;
+                                    //double amount = Math.Round(value * help, 2, MidpointRounding.AwayFromZero);
+                                    //double transfer = Math.Round(amount / currency.Converter, 2, MidpointRounding.AwayFromZero);
+                                    double transfer = Math.Floor((amount / currency.Converter) * 100) / 100;
+                                    target.AccountBalance += transfer;
+                                    string c = CheckCurrency(clientsCurrency);
+                                    string c2 = CheckCurrency(targetsCurrency);
+                                    result = "Przesłano kwotę: " + value + " " + c + ". Prowizja wyniosła " + provAmount + " " + c + ". Odbiorca otrzymał: " + transfer + " " + c2 + ".";
+                                }
+                                else
+                                {
+                                    return result;
+                                }
+                            }
+                        }
                         _repo.UpdateClient();
-                        return true;
+                        return result;
                     }
                 }
             }
 
-            return false;
+            return result;
         }
 
         public string GetCurrency(string token)
@@ -113,21 +167,7 @@ namespace Bank
             if (client != null)
             {
                 int currency = client.Currency;
-                switch(currency)
-                {
-                    case (int)CurrencyEnum.zloty:
-                            result = "złotych";
-                            break;
-                    case (int)CurrencyEnum.dolar:
-                        result = "dolarów";
-                        break;
-                    case (int)CurrencyEnum.euro:
-                        result = "euro";
-                        break;
-                    default:
-                        result = "Wystąpił problem z wczytaniem danych";
-                        break;
-                }
+                result = CheckCurrency(currency);
             }
             return result;
         }
@@ -141,6 +181,28 @@ namespace Bank
                 client.Token = "";
             }
             _repo.UpdateClient();
+        }
+
+        private string CheckCurrency(int currency)
+        {
+            string result;
+            switch (currency)
+            {
+                case (int)CurrencyEnum.zloty:
+                    result = "złotych";
+                    break;
+                case (int)CurrencyEnum.dolar:
+                    result = "dolarów";
+                    break;
+                case (int)CurrencyEnum.euro:
+                    result = "euro";
+                    break;
+                default:
+                    result = "Wystąpił problem z wczytaniem danych";
+                    break;
+            }
+
+            return result;
         }
     }
     

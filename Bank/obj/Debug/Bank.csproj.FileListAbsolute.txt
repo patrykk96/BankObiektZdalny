@@ -22,3 +22,4 @@ C:\Users\Patryk\source\repos\Bank\Bank\obj\Debug\Bank.Migrations.test2.resources
 C:\Users\Patryk\source\repos\Bank\Bank\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Patryk\source\repos\Bank\Bank\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Patryk\source\repos\Bank\Bank\obj\Debug\Bank.Migrations.Currency.resources
+C:\Users\Patryk\source\repos\Bank\Bank\obj\Debug\Bank.Migrations.Provisions.resources

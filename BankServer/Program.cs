@@ -16,7 +16,7 @@ namespace BankServer
         {
             HttpServerChannel channel = new HttpServerChannel(12345);
             ChannelServices.RegisterChannel(channel, false);
-            RemotingConfiguration.RegisterWellKnownServiceType(typeof(BankLogic), "Bank", WellKnownObjectMode.Singleton);
+            RemotingConfiguration.RegisterWellKnownServiceType(typeof(BankLogic), "Bank", WellKnownObjectMode.SingleCall);
             Console.ReadLine();
         }
     }

@@ -28,5 +28,12 @@ namespace Bank
         {
             _context.SaveChanges();
         }
+
+        public Provision GetProvision(Func<Provision, bool> func)
+        {
+            var result = _context.Set<Provision>().FirstOrDefault(func);
+
+            return result;
+        }
     }
 }

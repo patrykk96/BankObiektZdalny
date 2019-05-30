@@ -16,5 +16,6 @@ namespace Bank
         }
 
         public DbSet<Client> Clients { get; set; }
+        public DbSet<Provision> Provisions { get; set; }
     }
 }

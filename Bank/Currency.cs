@@ -10,7 +10,9 @@ namespace Bank
     public class Currency
     {
         [JsonProperty("name")]
-        public string Name { get; set; }
+        public int Name { get; set; }
+        [JsonProperty("target")]
+        public int Target { get; set; }
         [JsonProperty("converter")]
         public double Converter { get; set; }
     }
